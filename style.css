@@ -1,0 +1,25 @@
+.container.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container.grid {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 500px;
+    min-height: 500px;
+    border: 1px solid red;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    outline: 0.5px solid black;
+    background-color: white;
+    
+}
