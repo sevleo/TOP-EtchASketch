@@ -4,22 +4,20 @@
     padding: 50px 0px 50px 0px;
     border-top: 1px grey solid;
     border-bottom: 1px grey solid;
-    width: 1200px;
+    max-width: 700px;
+    width: 100%;
 }
 
 .controllers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 0;
 }
 
 .container.grid {
     
     display: flex;
-    /* width: 50%; */
-    max-width: 500px;
-    max-width: 500px;
+    width: 50%;
     aspect-ratio: 1/1;
     flex: auto;
 
