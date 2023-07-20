@@ -7,21 +7,13 @@ const containerGridDiv = document.querySelector('.container.grid');
 let gridSize = 15;
 let cellDimension = 500/gridSize;
 let rowWidth = gridSize*cellDimension;
+let color = 'black';
 
 createGrid();
 enableColorChange();
+enableSizeSlider();
+enableColorPicker();
 
-const gridSizeBtn = document.querySelector('.grid-size');
-gridSizeBtn.addEventListener("click", gridPopup);
-
-function gridPopup() {
-    gridSize = prompt("Enter new grid value");
-    cellDimension = 500/gridSize;
-
-    deleteGrid();
-    createGrid();
-    enableColorChange();
-}
 
 function enableColorChange() {
     const cells = Array.from(document.querySelectorAll('.cell'));
@@ -29,7 +21,7 @@ function enableColorChange() {
 }
 
 function changeColor(e) {
-    e.target.style.backgroundColor = 'red';
+    e.target.style.backgroundColor = color;
 }
 
 function createGrid() {
@@ -59,7 +51,32 @@ function createCells(row) {
     }
 }
 
-function deleteGrid() {
+function enableSizeSlider() {
+    const sizeSlider = document.querySelector('#grid-size');
+    sizeSlider.value = sizeSlider.attributes.defaultvalue.value;
+    const sizeLabel = document.querySelector('#size-label');
+    sizeLabel.textContent = `${sizeSlider.value} x ${sizeSlider.value}`;
+    sizeSlider.addEventListener('mousemove', function () {
+        sizeLabel.textContent = `${sizeSlider.value} x ${sizeSlider.value}`;
+        gridSize = sizeSlider.value;
+        cellDimension = 500/gridSize;
+    })
+}
+
+function enableColorPicker() {
+    const colorPicker = document.querySelector('#color-picker');
+    colorPicker.addEventListener('change', function () {
+        color = colorPicker.value;
+    })
+}
+
+function resetGrid() {
+    clearGrid();
+    createGrid();
+    enableColorChange();
+}
+
+function clearGrid() {
     const rows = Array.from(document.querySelectorAll('.row'));
     rows.forEach((row) => row.remove());
 }

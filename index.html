@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Etch A Sketch</h1>
     <div class="container main">
         <div class="controllers">
-            <button class="grid-size">Grid Size</button>
+            <p id="select-grid-size">Select grid size:</p>
+            <input id="grid-size" type="range" min="1" max="100" defaultvalue="16">
+            <label id="size-label" for="grid-size"></label>
+            <button class="grid-size" onclick="resetGrid()">Reset grid</button>
+            <p id="pick-color">Pick the color:</p>
+            <input id="color-picker" type="color">
         </div>
         <div class="container grid"></div>
+
+    </div>
+    <div class="footer">
+        Made by: <a href="https://github.com/sevleo"><img id="gh-logo" src="./images/githublogo.png" alt="github logo"> Seva Leonov</a>
     </div>
 </body>
 </html>
