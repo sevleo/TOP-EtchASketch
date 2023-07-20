@@ -1,13 +1,14 @@
 
 
-const containerMainDiv = document.querySelector('.container.main');
-
 const containerGridDiv = document.querySelector('.container.grid');
 
-let gridSize = 15;
-let cellDimension = 500/gridSize;
-let rowWidth = gridSize*cellDimension;
+let gridSize = 16;
+let cellDimensionPercent = containerGridDiv.getBoundingClientRect().width/gridSize/containerGridDiv.getBoundingClientRect().width*100;
+
+
 let color = 'black';
+
+
 
 createGrid();
 enableColorChange();
@@ -33,8 +34,8 @@ function createRows() {
         const row = document.createElement('div');
         row.classList.add('row');
         row.classList.add(`r${i+1}`);
-        row.style.width = `${rowWidth}px`;
-        row.style.height = `${cellDimension}px`;
+        row.style.width = `100%`;
+        row.style.height = `${cellDimensionPercent}%`;
         containerGridDiv.append(row);
         createCells(row);
     }
@@ -45,8 +46,8 @@ function createCells(row) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         cell.classList.add(`c${r+1}`);
-        cell.style.width = `${cellDimension}px`;
-        cell.style.height = `${cellDimension}px`;
+        cell.style.width = `${cellDimensionPercent}%`;
+        cell.style.height = `100%`;
         row.append(cell);
     }
 }
@@ -59,7 +60,8 @@ function enableSizeSlider() {
     sizeSlider.addEventListener('mousemove', function () {
         sizeLabel.textContent = `${sizeSlider.value} x ${sizeSlider.value}`;
         gridSize = sizeSlider.value;
-        cellDimension = 500/gridSize;
+        cellDimensionPercent = containerGridDiv.getBoundingClientRect().width/gridSize/containerGridDiv.getBoundingClientRect().width*100;
+        console.log(cellDimensionPercent);
     })
 }
 

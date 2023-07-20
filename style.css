@@ -2,39 +2,41 @@
     display: flex;
     align-items: center;
     padding: 50px 0px 50px 0px;
-    /* border: 1px grey solid; */
     border-top: 1px grey solid;
     border-bottom: 1px grey solid;
+    width: 1200px;
 }
 
 .controllers {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 0;
 }
 
 .container.grid {
     
     display: flex;
-    /* min-width: 100px;
+    /* width: 50%; */
     max-width: 500px;
-    width: 50%;
+    max-width: 500px;
     aspect-ratio: 1/1;
-    flex: 1 1 auto; */
+    flex: auto;
 
     flex-direction: column;
-    border: 1px solid rgb(86, 86, 86);
     margin: 20px;
 
 }
 
 .row {
     display: flex;
+    flex: auto;
 }
 
 .cell {
     outline: 0.5px solid black;
     background-color: white;   
+    flex: auto;
 }
 
 #select-grid-size {
