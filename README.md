@@ -11,7 +11,7 @@ The project provides a canvas with a grid for drawing stuff.
 
 - [Demo](#demo)
 - [How to use](#how-to-use)
-- [Technologies used](#technologies)
+- [Technologies](#technologies)
 - [Contributing](#contributing)
 - [License](#license)
 
